@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xiao</groupId>
+    <artifactId>b2b-account-service</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- 项目的主源码目录，默认为src/main/java/ -->
+        <a>${pom.build.sourceDirectory}</a>
+        <!-- 项目的测试源码目录，默认为src/test/java/ -->
+        <b>${project.build.testSourceDirectory}</b>
+        <!-- 项目构建输出目录，默认为target/ -->
+        <c>${project.build.directory}</c>
+        <!-- 项目主代码编译输出目录，默认为target/classes -->
+        <d>${project.build.outputDirectory}</d>
+        <!-- 项目测试代码编译输出目录，默认为target/test-classes -->
+        <e>${project.build.testOutputDirectory}</e>
+        <!-- 项目的groupId -->
+        <f>${project.groupId}</f>
+        <!-- 项目的artifactId -->
+        <g>${project.artifactId}</g>
+        <!-- 项目的version，与${version}等价-->
+        <h>${project.version}</h>
+        <!-- 项目打包输出文件的名称，默认为${project.artifactId}-${project.version} -->
+        <i>${project.build.finalName}</i>
+
+        <!-- setting属性 -->
+        <!-- 获取本地仓库地址-->
+        <a1>${settings.localRepository}</a1>
+
+        <!-- 系统属性 -->
+        <!-- 用户目录 -->
+        <a2>${user.home}</a2>
+
+        <!-- 环境变量属性，获取环境变量JAVA_HOME的值 -->
+        <a3>${env.JAVA_HOME}</a3>
+
+        <encoding>UTF-8</encoding>
+        <jdbc.url>jdbc:mysql://localhost:3306/javacode2018?characterEncoding=UTF-8</jdbc.url>
+        <jdbc.username>root</jdbc.username>
+        <jdbc.password>root</jdbc.password>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>b2b-account-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <resources>
+            <resource>
+                <!-- 指定资源文件的目录 -->
+                <directory>${project.basedir}/src/main/resources</directory>
+                <!-- 是否开启过滤替换配置，默认是不开启的 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <!-- 指定资源文件的目录 -->
+                <directory>${project.basedir}/src/test/resources</directory>
+                <!-- 是否开启过滤替换配置，默认是不开启的 -->
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+</project>
